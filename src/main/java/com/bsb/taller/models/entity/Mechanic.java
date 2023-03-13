@@ -1,5 +1,6 @@
 package com.bsb.taller.models.entity;
 
+import com.bsb.taller.utils.emuns.StatusMechanic;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 
@@ -15,6 +16,6 @@ import javax.validation.constraints.NotBlank;
 public class Mechanic extends Data{
     @NotBlank(message = "the attribute sector cannot be empty or null")
     private String sector;
-    @Enumerated(EnumType.STRING)
-    private char status;
+    @Enumerated(EnumType.ORDINAL)
+    private StatusMechanic status;
 }

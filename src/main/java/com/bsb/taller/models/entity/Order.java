@@ -1,6 +1,7 @@
 package com.bsb.taller.models.entity;
 
 import com.bsb.taller.utils.constants.DateFormatConstants;
+import com.bsb.taller.utils.emuns.StatusOrder;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
@@ -11,6 +12,7 @@ import javax.validation.constraints.Min;
 import java.time.LocalDate;
 
 @Entity @Data @Builder
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +22,7 @@ public class Order {
     private Integer amountPayments;
     //estado de la orden
     @Enumerated(EnumType.STRING)
-    private String  status;
+    private StatusOrder status;
     @Column(name = "date_admission")
     @DateTimeFormat (iso = DateTimeFormat.ISO.DATE, pattern = DateFormatConstants.DATE_TIME_FORMAT)
     private LocalDate dateAdmission;

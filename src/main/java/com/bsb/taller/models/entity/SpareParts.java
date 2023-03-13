@@ -4,16 +4,14 @@ import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.Columns;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Data @Builder
+@Table(name = "spare_parts")
 public class SpareParts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -11,6 +11,7 @@ import java.time.LocalDate;
 
 @Data @Builder
 @Entity
+@Table(name="labour")
 public class Labour {
     /* TODO: MANO DE OBRA */
     @Id
