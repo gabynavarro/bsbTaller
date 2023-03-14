@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -18,4 +19,7 @@ public class Mechanic extends Data{
     private String sector;
     @Enumerated(EnumType.ORDINAL)
     private StatusMechanic status;
+    /* TODO:Relaciones  */
+    @OneToMany(mappedBy = "mechanic")
+    private List<Labour> labours;
 }

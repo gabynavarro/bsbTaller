@@ -3,11 +3,10 @@ package com.bsb.taller.models.entity;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @lombok.Data
@@ -20,5 +19,9 @@ public class Client extends Data{
     private String linePhone;
     @NotBlank(message = "the attribute email phone cannot be empty or null")
     @Column(name = "email", unique = true)
+    @Email(message = "The email exists or contains invalid dataa")
     private String email;
+    /* TODO: Relaciones */
+    @ManyToMany(mappedBy = "clients")
+    private List<Vehicle> vehicles;
 }

@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Data @Builder
@@ -25,4 +26,7 @@ public class SpareParts {
     @NotNull
     @DecimalMin(value = "0.1", inclusive = false)
     private Double cost;
+    /* TODO: Relaciones */
+    @OneToMany(mappedBy = "spareParts")
+    private List<OrderDetail> orderDetails;
 }

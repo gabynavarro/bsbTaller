@@ -23,4 +23,11 @@ public class Labour {
     @Column(name = "duration_hs")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, pattern = DateFormatConstants.DATE_HORA)
     private LocalDate durationHs;
+    /* TODO: Relaciones*/
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "mechanic_id")
+    private Mechanic mechanic;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "order_labour_id")
+    private Order order;
 }

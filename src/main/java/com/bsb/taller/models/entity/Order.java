@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity @Data @Builder
 @Table(name = "orders")
@@ -38,5 +39,20 @@ public class Order {
     private Long mileage;
     private String fuelLevel;
     private String cardType;
+    /*  TODO:Relaxations */
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "vehicle_id")
+    private Vehicle vehicle;
 
+    @OneToMany(mappedBy = "order")
+    private List<Labour> labours;
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderDetail> orderDetails;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Employee receptionist;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Employee aadministrative;
 }

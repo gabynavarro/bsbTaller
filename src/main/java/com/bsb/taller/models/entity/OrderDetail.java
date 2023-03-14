@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
@@ -20,5 +21,14 @@ public class OrderDetail {
     private Integer amount;
     @NotNull
     @DecimalMin("0.0")
+    @Digits(integer = 17,fraction = 2)
     private Double fullTotal;
+    /*  TODO:Relaciones */
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
+
+    @ManyToOne
+    @JoinColumn(name = "spare_parts_id")
+    private SpareParts spareParts;
 }

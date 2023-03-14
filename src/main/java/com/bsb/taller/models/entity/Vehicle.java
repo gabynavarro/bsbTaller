@@ -2,11 +2,13 @@ package com.bsb.taller.models.entity;
 
 import lombok.Builder;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Data @Builder
@@ -16,7 +18,7 @@ public class Vehicle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
     @NotNull
-    @Min(1996)
+    @Length(min = 1980)
     private Integer year;
     @NotBlank(message = "the attribute color cannot be empty or null")
     private String color;
@@ -28,4 +30,7 @@ public class Vehicle {
     @NotBlank(message = "the attribute replacement cannot be empty or null")
     @Column(name = "patent", unique = true)
     private String patent;
+    /* TODO: Relaciones */
+    @ManyToMany
+    private List<Client> clients;
 }
