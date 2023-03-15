@@ -23,6 +23,9 @@ public class EmployeeServiceImpl extends DataService<Employee> implements Employ
 
     @Override
     public EmployeeResponse add(EmployeeRequest employee) {
+        /*Metodo no solicitado, carga por seeder
+        * escalabilidad futura
+        * */
         return null;
     }
 

@@ -1,5 +1,7 @@
 package com.bsb.taller.models.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
@@ -7,7 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@RequiredArgsConstructor
+@AllArgsConstructor @NoArgsConstructor
 @Table(name = "datas")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Data {
