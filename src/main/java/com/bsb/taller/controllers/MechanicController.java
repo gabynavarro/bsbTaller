@@ -21,13 +21,13 @@ import java.util.List;
 @RequestMapping(name = "/api/v1/mechanic")
 public class MechanicController {
     private final MechanicService service;
-    @GetMapping("name")
+   /* @GetMapping("name")
     @ApiOperation(value = "find by name mechanic", notes = "Return mechanic type response" )
     public ResponseEntity<?> getMechanicName(@RequestParam(name = "name", required = false) String name) {
         return ResponseEntity.status( HttpStatus.OK ).body(service.findByName(name));
-    }
+    }*/
 
-    @GetMapping
+ /*   @GetMapping("/all")
     @ApiOperation(value = "find all mechanics", notes = "Return list mechanics type responses" )
     public ResponseEntity<List<?>> getAll() {
         return ResponseEntity.status(HttpStatus.OK).body(service.getAll());
@@ -53,5 +53,5 @@ public class MechanicController {
     public ResponseEntity<Void> delete(@PathVariable Long id){
         service.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
+    }*/
 }

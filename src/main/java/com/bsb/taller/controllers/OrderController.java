@@ -20,8 +20,8 @@ import java.util.List;
 @Api(value = "Order Controller", tags = "Actions allowed for order")
 @RequestMapping(name = "/api/v1/order")
 public class OrderController {
-    private final OrderService service;
-    @GetMapping("name")
+ /*   private final OrderService service;
+    @GetMapping("/name")
     @ApiOperation(value = "find by name order", notes = "Return order type response" )
     public ResponseEntity<?> getOrderName(@RequestParam(name = "name", required = false) String name) {
         return ResponseEntity.status( HttpStatus.OK ).body(service.findByName(name));
@@ -29,7 +29,7 @@ public class OrderController {
 
     @GetMapping
     @ApiOperation(value = "find all orders", notes = "Return list orders type responses" )
-    public ResponseEntity<List<?>> getAll() {
+    public ResponseEntity<List<?>> orderAll() {
         return ResponseEntity.status(HttpStatus.OK).body(service.getAll());
     }
 
@@ -43,10 +43,10 @@ public class OrderController {
 
     @PutMapping("/{id}")
     @ApiOperation(value = "find by id and update order", notes = "returns modified order ty response" )
-    public ResponseEntity<?> update(
+    public ResponseEntity<?> orderUpdate(
             @RequestBody OrderRequest order,
             @PathVariable Long id)  {
         return ResponseEntity.status(HttpStatus.OK).body(service.update(id, order));
-    }
+    }*/
 
 }

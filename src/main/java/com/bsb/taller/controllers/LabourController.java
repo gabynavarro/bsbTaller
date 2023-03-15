@@ -16,33 +16,30 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@Log4j2
 @Api(value = "Labour Controller", tags = "Actions allowed for labour")
-@RequestMapping(name = "/api/v1/order")
+@RequestMapping(name = "/api/v1/labour")
 public class LabourController {
-    private final LabourService service;
-
-
+  /*  private final LabourService service;
     @GetMapping
     @ApiOperation(value = "find all labours", notes = "Return list labours type responses" )
-    public ResponseEntity<List<?>> getAll() {
+    public ResponseEntity<List<?>> labourAll() {
         return ResponseEntity.status(HttpStatus.OK).body(service.getAll());
     }
 
 
-    @PostMapping()
+    @PostMapping
     @ApiOperation(value = "create new labour", notes = "Return a labour type response" )
     public ResponseEntity<?> labourAdd(
             @RequestBody LabourRequest labour) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.add(labour));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("{id}")
     @ApiOperation(value = "find by id and update labour", notes = "returns modified labour ty response" )
-    public ResponseEntity<?> update(
+    public ResponseEntity<?> labourUpdate(
             @RequestBody LabourRequest request,
             @PathVariable Long id)  {
         return ResponseEntity.status(HttpStatus.OK).body(service.update(id, request));
-    }
+    }*/
 
 }

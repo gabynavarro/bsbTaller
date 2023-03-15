@@ -3,9 +3,10 @@ package com.bsb.taller.service;
 import com.bsb.taller.models.request.LabourRequest;
 import com.bsb.taller.models.response.LabourResponse;
 import com.bsb.taller.service.abs.LabourService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class LabourServiceImpl implements LabourService {
     @Override
     public List<LabourResponse> getAll() {

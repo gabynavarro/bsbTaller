@@ -16,11 +16,10 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@Log4j2
 @Api(value = "Order detail Controller", tags = "Actions allowed for order detail")
 @RequestMapping(name = "/api/v1/orderdetails")
 public class OrderDetailController {
-    private final OrderDetailService service;
+ /*   private final OrderDetailService service;
     @GetMapping("name")
     @ApiOperation(value = "find by order detail", notes = "Return order detail type response" )
     public ResponseEntity<?> getOrderName(@RequestParam(name = "name", required = false) String name) {
@@ -47,6 +46,6 @@ public class OrderDetailController {
             @RequestBody OrderDetailRequest detail,
             @PathVariable Long id)  {
         return ResponseEntity.status(HttpStatus.OK).body(service.update(id, detail));
-    }
+    }*/
 
 }

@@ -14,11 +14,10 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@Log4j2
 @Api(value = "Vehicle Controller", tags = "Actions allowed for vehicle")
 @RequestMapping(name = "/api/v1/vehicle")
 public class VehicleController {
-    private final VehicleService service;
+  /*  private final VehicleService service;
     @GetMapping("name")
     @ApiOperation(value = "find by name vehicle", notes = "Return vehicle type response" )
     public ResponseEntity<?> getVehiclePatent(@RequestParam(name = "patent", required = false) String patent) {
@@ -45,6 +44,6 @@ public class VehicleController {
             @RequestBody VehicleRequest request,
             @PathVariable Long id)  {
         return ResponseEntity.status(HttpStatus.OK).body(service.update(id, request));
-    }
+    }*/
 
 }
