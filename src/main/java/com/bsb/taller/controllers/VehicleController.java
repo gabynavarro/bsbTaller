@@ -34,7 +34,7 @@ public class VehicleController {
 
     @PostMapping()
     @ApiOperation(value = "create new vehicle", notes = "Return a vehicle type response" )
-    public ResponseEntity<?> clientAdd(
+    public ResponseEntity<?> add(
             @RequestBody VehicleRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.add(request));
     }
